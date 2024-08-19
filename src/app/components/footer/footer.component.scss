@@ -1,0 +1,66 @@
+footer > div{
+    border-top: 1px solid var(--color6);
+    background-color: #fff;
+}
+
+.title-container{
+    height: 90px;
+}
+
+.details-container{
+    height: 320px;
+}
+
+.list-heading{
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding-bottom: 15px;
+}
+
+.list-item{
+    margin-top: 5px;
+}
+
+.list-item a{
+    text-decoration: none;
+    color: var(--color8);
+}
+
+.list-item a:hover{
+    color: var(--color4);
+}
+
+.subscription-input{
+    border-radius: 0;
+    border-color: var(--color6);
+    margin-top: 15px;
+    height: 45px;
+    width: 230px;
+}
+
+.subscription-button{
+    background-color: var(--color5);
+    border-radius: 0;
+    color: var(--color7);
+    margin-top: 15px;
+    width: 130px;
+    height: 45px;
+}
+
+.wrights-section{
+    height: 100px;
+}
+
+.icons{
+    display: flex;
+    gap: 30px;
+}
+
+.icons fa-icon{
+    height: 15px;
+    cursor: pointer;
+}
+
+.icons fa-icon:hover{
+    color: var(--color4);
+}

@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand w-25" routerLink="home"
+      ><img class="ml-3" src="assets/logo.png" alt="smart store"
+    /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse me-3" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex gap-4">
+        <!-- <li class="nav-item">
+          <span class="nav-link active" aria-current="page" routerLink="/products">Store</span>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link" href="d">About</span>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link" href="e">Contact us</span>
+        </li> -->
+        <li class="nav-item d-flex align-items-center" (click)="openCart()">
+          <fa-icon [icon]="['fas', 'shopping-cart']"></fa-icon>
+          <span class="product-number d-flex justify-content-center align-items-center">{{cartService.products.length}}</span>
+        </li>
+        <!-- <li class="nav-item">
+          <fa-icon [icon]="['fas', 'user']"></fa-icon>
+           <button class="btn rounded login-button fw-bold">Login</button>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</nav>

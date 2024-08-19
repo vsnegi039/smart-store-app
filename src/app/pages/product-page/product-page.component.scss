@@ -1,0 +1,98 @@
+.product-page {
+    width: 100%;
+    background-color: #f5f7f9;
+    padding: 0;
+    margin: 0;
+    padding: 4% 7%;
+}
+
+.image-container {
+    height: 700px;
+}
+
+.image-container .img {
+    padding: 10%;
+    height: 75%;
+    max-width: 525px;
+    background-color: rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+}
+
+.image-container .img img {
+    transition: transform .2s;
+}
+
+.image-container .img:hover img{
+    transform: scale(1.07);
+}
+
+.pagination .btn,
+.pagination input {
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    background-color: #fff;
+    border-radius: 0;
+    color: #000;
+    border: 1px solid #e2e2e2;
+    outline: none;
+    text-align: center;
+}
+
+.pagination .btn:hover,
+.pagination .selected {
+    background-color: #000;
+    color: #fff;
+}
+
+.no-arrows::-webkit-outer-spin-button,
+.no-arrows::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.cart-btn {
+    border-radius: 0;
+    height: 45px;
+    width: 150px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.color-faded {
+    color: var(--color)2;
+}
+
+.product-images {
+    max-width: 100%;
+    width: 525px;
+    overflow: hidden;
+    position: relative;
+    scrollbar-width: none;
+    // padding: 2%;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 86%;
+    font-size: 18pt;
+    cursor: pointer;
+}
+
+.right-arrow {
+    right: -4%;
+}
+
+.left-arrow {
+    left: -4%;
+}
+
+.product-images img {
+    height: 150px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.product-images img.selected {
+    opacity: 0.5;
+}

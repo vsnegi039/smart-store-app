@@ -1,0 +1,89 @@
+<div class="product-page">
+  <div class="container d-flex">
+    <div class="filter-section">
+      <div class="search-menu">
+        <form (ngSubmit)="updateSearch()" class="d-flex">
+          <input
+            class="form-control no-outline"
+            placeholder="Search Products..."
+            [(ngModel)]="searchString"
+            type="text"
+            name="searchString"
+          />
+          <button class="btn" type="submit">
+            <fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>
+          </button>
+        </form>
+      </div>
+
+      <div class="row mt-5 category-filter gap-3">
+        <h4>Categories</h4>
+        <ng-container *ngFor="let category of categoryCounts">
+          <div class="category-item d-flex justify-content-between">
+            <span class="item" (click)="updateCategory(category._id)">{{
+              category._id
+            }}</span>
+            <span class="item-number">({{ category.count }})</span>
+          </div>
+        </ng-container>
+      </div>
+
+      <div class="row mt-5 best-sellers gap-3">
+        <h4>Our Best Sellers</h4>
+        <ng-container *ngFor="let product of bestProducts">
+          <div class="best-item d-flex gap-3" [routerLink]="['/product/',product._id]">
+            <div class="img">
+              <img [src]="product.images[0]" alt="" />
+            </div>
+            <div class="product-info d-flex flex-column justify-content-center">
+              <div>{{ product.title }}</div>
+              <div>${{ product.price }}</div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="product-section">
+      <div class="row page-navigation">
+        <p>
+          <span class="cursor-pointer" [routerLink]="'/home'">Home </span>
+          <span
+            [class.cursor-pointer]="selectedCategory"
+            (click)="setDefaultSetting()"
+            >/ Store</span
+          >
+          <span *ngIf="selectedCategory">/ {{ selectedCategory }}</span>
+        </p>
+      </div>
+      <div class="row mt-4" *ngIf="totalProducts>0">
+        <p>
+          Showing {{ (page-1) * 12 + 1 }}-{{ ( page * 12 <= totalProducts ) ? page * 12 : totalProducts }} of
+          {{ totalProducts }} results
+        </p>
+      </div>
+      <div class="row mt-4" *ngIf="totalProducts<=0">
+        <p>
+          No data found!
+        </p>
+      </div>
+      <div class="row product-container">
+        <ng-container *ngFor="let product of products">
+          <app-product [product]="product"></app-product>
+        </ng-container>
+      </div>
+      <div class="row mt-5 pagination">
+        <button class="btn page-item" *ngIf="numOfPage>3" [disabled]="page===1" (click)="setPage(this.page-1, true, false)">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+        </button>
+        <button class="btn" [class.selected]="page===pagination.left" *ngIf="numOfPage>0" (click)="setPage(pagination.left, false, false)">{{pagination.left}}</button>
+        <button class="btn" [class.selected]="page===pagination.middle" *ngIf="numOfPage>1" (click)="setPage(pagination.middle, false, false)">{{pagination.middle}}</button>
+        <button class="btn" [class.selected]="page===pagination.right" *ngIf="numOfPage>2" (click)="setPage(pagination.right, false, false)">{{pagination.right}}</button>
+        <button class="btn page-item" *ngIf="numOfPage>3" [disabled]="page===numOfPage" (click)="setPage(this.page+1, false, true)">
+            <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

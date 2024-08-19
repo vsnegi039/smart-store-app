@@ -1,0 +1,53 @@
+.navbar {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.navbar-nav .nav-link,
+.navbar-brand {
+    color: var(--color1);
+    cursor: pointer;
+}
+
+.navbar-brand img {
+    height: 45px;
+    margin-left: 15px;
+}
+
+.navbar-nav {
+    gap: 15px;
+    font-weight: 500;
+}
+
+.search-form {
+    min-width: 48%;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+fa-icon{
+    color: #fff;
+    font-size: 13pt;
+}
+
+.nav-item{
+    cursor: pointer;
+}
+
+.product-number{
+    height: 18px;
+    width: 18px;
+    background-color: #fff;
+    transform: translate(-25%, -50%);
+    border-radius: 100%;
+    font-size: 9pt;
+}
+
+.login-button{
+    width: 100px;
+    height: 40px;
+    background-color: var(--color5) !important;
+    color: var(--color7) !important;
+    border: none !important;
+}

@@ -1,0 +1,65 @@
+<div class="featured-container">
+  <div class="content">
+    <div class="d-flex justify-content-center">
+      <h4>Featured Products</h4>
+    </div>
+    <div class="d-flex justify-content-center mt-3">
+      <span class="elementor-divider-separator"></span>
+    </div>
+    <div class="product-container mt-5 row">
+      <ng-container *ngFor="let product of featuredProducts">
+        <app-product [product]="product"></app-product>
+      </ng-container>
+    </div>
+
+    <div class="special-edition mt-5">
+      <div class="edition-content">
+        <h4>Limited Time Offer</h4>
+        <h2>Special Edition</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+          tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+        </p>
+        <p class="discount-content">
+          Buy This T-shirt At 20% Discount, Use Code OFF20
+        </p>
+        <button class="shop-butoon">SHOP NOW</button>
+      </div>
+    </div>
+
+    <div class="features">
+      <div class="item d-flex align-items-center flex-column gap-2">
+        <img src="assets/brand/globe-free-img.png" alt="" />
+        <span class="fw-bold">Worldwide Shipping</span>
+        <span class="text-center"
+          >It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus
+          leo.</span
+        >
+      </div>
+      <div class="item d-flex align-items-center flex-column gap-2">
+        <img src="assets/brand/quality-free-img.png" alt="" />
+        <span class="fw-bold">Worldwide Shipping</span>
+        <span class="text-center"
+          >It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus
+          leo.</span
+        >
+      </div>
+      <div class="item d-flex align-items-center flex-column gap-2">
+        <img src="assets/brand/tag-free-img.png" alt="" />
+        <span class="fw-bold">Worldwide Shipping</span>
+        <span class="text-center"
+          >It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus
+          leo.</span
+        >
+      </div>
+      <div class="item d-flex align-items-center flex-column gap-2">
+        <img src="assets/brand/lock-free-img.png" alt="" />
+        <span class="fw-bold">Worldwide Shipping</span>
+        <span class="text-center"
+          >It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus
+          leo.</span
+        >
+      </div>
+    </div>
+  </div>
+</div>

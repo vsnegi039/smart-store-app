@@ -1,0 +1,72 @@
+<div class="product-page" *ngIf="product">
+  <div class="container d-flex justify-content-around">
+    <div class="position-relative image-container">
+      <div class="img d-flex">
+        <img class="card-img-top" [src]="selectedImage" alt="Card image cap" />
+      </div>
+      <div
+        class="product-images gap-3 mt-3 justify-content-around d-flex"
+        #scrollContainer
+      >
+        <ng-container *ngFor="let image of product.images; let i = index">
+          <div class="image">
+            <img
+              [src]="image"
+              [class.selected]="seletedImageIndex === i"
+              alt=""
+              (click)="maximizeImage(image, i)"
+            />
+          </div>
+        </ng-container>
+      </div>
+      <span
+        class="right-arrow carousel-control"
+        (click)="scrollRight(scrollContainer)"
+        [class.d-none]="isScrollAtRightEdge"
+        *ngIf="product.images.length > 3"
+        ><fa-icon [icon]="['fas', 'chevron-right']"></fa-icon></span
+      >
+      <span
+        class="left-arrow carousel-control"
+        (click)="scrollLeft(scrollContainer)"
+        [class.d-none]="isScrollAtLeftEdge"
+        *ngIf="product.images.length > 3"
+      >
+        <fa-icon [icon]="['fas', 'chevron-left']"></fa-icon>
+      </span>
+    </div>
+    <div class="product-info w-50 p-2 d-flex flex-column gap-3">
+      <div class="title">
+        <h2>{{ product.title }}</h2>
+      </div>
+      <div class="price d-flex align-items-center">
+        <h4>${{ product.price }}</h4>
+        + Free Shipping
+      </div>
+      <div class="desc">
+        <p>{{ product.description }}</p>
+      </div>
+      <div class="pagination d-flex gap-3">
+        <button class="btn selected" (click)="decrement()">-</button>
+        <input
+          type="number"
+          class="no-arrows"
+          [(ngModel)]="productAmount"
+          min="1"
+          max="10"
+          (change)="validateAmount()"
+        />
+        <button class="btn selected" (click)="increament()">+</button>
+      </div>
+      <button class="btn btn-primary cart-btn mt-1" (click)="addToCart()">
+        ADD TO CART
+      </button>
+      <div>
+        <h4 class="mt-2 pl-3">Ratings & Reviews</h4>
+      </div>
+      <ng-container *ngFor="let review of product.reviews">
+        <div>{{ review.rating }}★ {{ review.comment }}</div>
+      </ng-container>
+    </div>
+  </div>
+</div>

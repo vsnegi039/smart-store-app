@@ -1,0 +1,66 @@
+.widget-container {
+    background-color: #fff;
+    height: 100vh;
+    width: 100%;
+}
+
+.card-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 1.5%;
+}
+
+.card {
+    height: 70%;
+    width: 25%;
+    background: url('../../../../public/assets/brand/women-fashion-free-img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
+.card::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    opacity: 0.5;
+}
+
+.card-body {
+    color: #fff;
+    z-index: 2;
+    padding: 12% 10%;
+}
+
+button {
+    background-color: #ffffff;
+    color: #000000;
+    height: 45px;
+    width: 150px;
+    border-radius: 0;
+    border: none;
+    font-weight: 600;
+}
+
+button:hover {
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.card-2{
+    background: url('../../../../public/assets/brand/men-fashion-free-img.jpg');
+    background-position: center left;
+    background-size: cover;
+}
+
+.card-3 {
+    background: url('../../../../public/assets/brand/footwear-free-img.jpg');
+    background-position: center right;
+    background-size: cover;
+}

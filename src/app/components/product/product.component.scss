@@ -1,0 +1,29 @@
+.card {
+    width: 248px !important;
+    border-radius: 0 !important;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.card img {
+    height: 248px;
+    width: 248px;
+    border-radius: 0 !important;
+}
+.card-body {
+    color: var(--color2);
+}
+
+:host {
+    width: fit-content;
+    padding: 0;
+}
+
+.card-title {
+    font-size: 12pt;
+}
+
+img{
+    background-color: rgba(0,0,0,0.08);
+}

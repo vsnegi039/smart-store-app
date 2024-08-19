@@ -1,0 +1,8 @@
+<div class="card" (click)="navigateToProductPage(product._id)">
+  <img class="card-img-top" [src]="product.images[0]" alt="Product image" />
+  <div class="card-body">
+    <h5 class="card-title">{{ product.title }}</h5>
+    <span class="d-block faded">{{ product.category }}</span>
+    <span class="d-block strighthrough">${{ product.price }}</span>
+  </div>
+</div>

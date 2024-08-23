@@ -17,48 +17,47 @@
         <h4>Limited Time Offer</h4>
         <h2>Special Edition</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-          tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+          Discover Your Signature Scent with 20% OFF on All Fragrances – Elevate
+          Your Essence Today!
         </p>
-        <p class="discount-content">
-          Buy This T-shirt At 20% Discount, Use Code OFF20
-        </p>
-        <button class="shop-butoon">SHOP NOW</button>
+        <button
+          class="shop-butoon"
+          [routerLink]="['/products']"
+          [queryParams]="{ category: 'fragrances' }"
+        >
+          SHOP NOW
+        </button>
       </div>
     </div>
 
     <div class="features">
       <div class="item d-flex align-items-center flex-column gap-2">
-        <img src="assets/brand/globe-free-img.png" alt="" />
+        <img src="assets/brand/globe-free-img.png" alt="Worldwide Shipping" />
         <span class="fw-bold">Worldwide Shipping</span>
-        <span class="text-center"
-          >It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus
-          leo.</span
-        >
+        <span class="text-center">
+          Shipping to every corner of the world, fast and reliable delivery.
+        </span>
       </div>
       <div class="item d-flex align-items-center flex-column gap-2">
-        <img src="assets/brand/quality-free-img.png" alt="" />
-        <span class="fw-bold">Worldwide Shipping</span>
-        <span class="text-center"
-          >It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus
-          leo.</span
-        >
+        <img src="assets/brand/quality-free-img.png" alt="Best Quality" />
+        <span class="fw-bold">Best Quality</span>
+        <span class="text-center">
+          Experience superior quality with products crafted to perfection.
+        </span>
       </div>
       <div class="item d-flex align-items-center flex-column gap-2">
-        <img src="assets/brand/tag-free-img.png" alt="" />
-        <span class="fw-bold">Worldwide Shipping</span>
-        <span class="text-center"
-          >It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus
-          leo.</span
-        >
+        <img src="assets/brand/tag-free-img.png" alt="Best Offers" />
+        <span class="fw-bold">Best Offers</span>
+        <span class="text-center">
+          Enjoy unbeatable prices and special deals on all our products.
+        </span>
       </div>
       <div class="item d-flex align-items-center flex-column gap-2">
-        <img src="assets/brand/lock-free-img.png" alt="" />
-        <span class="fw-bold">Worldwide Shipping</span>
-        <span class="text-center"
-          >It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus
-          leo.</span
-        >
+        <img src="assets/brand/lock-free-img.png" alt="Secure Payments" />
+        <span class="fw-bold">Secure Payments</span>
+        <span class="text-center">
+          Shop with confidence, knowing your payments are 100% secure.
+        </span>
       </div>
     </div>
   </div>

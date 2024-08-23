@@ -27,7 +27,6 @@
 }
 
 fa-icon{
-    color: #fff;
     font-size: 13pt;
 }
 
@@ -38,7 +37,6 @@ fa-icon{
 .product-number{
     height: 18px;
     width: 18px;
-    background-color: #fff;
     transform: translate(-25%, -50%);
     border-radius: 100%;
     font-size: 9pt;
@@ -50,4 +48,18 @@ fa-icon{
     background-color: var(--color5) !important;
     color: var(--color7) !important;
     border: none !important;
+}
+
+.home-router, .home-router .nav-item span{
+    color: #fff;
+}
+
+.home-router .nav-item span.product-number{
+    background-color: #fff;
+    color: #000;
+}
+
+.nav-item span.product-number {
+    background-color: #000;
+    color: #fff;
 }

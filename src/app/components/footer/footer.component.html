@@ -12,19 +12,62 @@
       </div>
       <div>
         <div class="list-heading">For Her</div>
-        <div class="list-item"><a href="#">Women Jeans</a></div>
-        <div class="list-item"><a href="#">Tops and Shirts</a></div>
-        <div class="list-item"><a href="#">Women Jackets</a></div>
-        <div class="list-item"><a href="#">Heels and flats</a></div>
-        <div class="list-item"><a href="#">Women Accessories</a></div>
+        <div class="list-item">
+          <a
+            [routerLink]="['/products']"
+            [queryParams]="{ category: 'womens-dresses' }"
+          >
+            Womens Dresses
+          </a>
+        </div>
+        <div class="list-item">
+          <a [routerLink]="['/products']" [queryParams]="{ category: 'tops' }">
+            Tops
+          </a>
+        </div>
+        <div class="list-item">
+          <a [routerLink]="['/products']" [queryParams]="{ category: 'womens-bags' }">
+            Women bags
+          </a>
+        </div>
+        <div class="list-item">
+          <a [routerLink]="['/products']" [queryParams]="{ category: 'womens-shoes' }">
+            Heels and flats
+          </a>
+        </div>
+        <div class="list-item">
+          <a [routerLink]="['/products']" [queryParams]="{ category: 'womens-jewellery' }">
+            Women Accessories
+          </a>
+        </div>
       </div>
       <div>
         <div class="list-heading">For Him</div>
-        <div class="list-item"><a href="#">Men Jeans</a></div>
-        <div class="list-item"><a href="#">Men Shirts</a></div>
-        <div class="list-item"><a href="#">Men Shoes</a></div>
-        <div class="list-item"><a href="#">Men Accessories</a></div>
-        <div class="list-item"><a href="#">Men jackets</a></div>
+        <div class="list-item">
+          <a [routerLink]="['/products']" [queryParams]="{ category: 'tops' }">
+            Men Jeans
+          </a>
+        </div>
+        <div class="list-item">
+          <a [routerLink]="['/products']" [queryParams]="{ category: 'mens-shirts' }">
+            Men Shirts
+          </a>
+        </div>
+        <div class="list-item">
+          <a [routerLink]="['/products']" [queryParams]="{ category: 'mens-shoes' }">
+            Men Shoes
+          </a>
+        </div>
+        <div class="list-item">
+          <a [routerLink]="['/products']" [queryParams]="{ category: 'mens-watches' }">
+            Men Watches
+          </a>
+        </div>
+        <div class="list-item">
+          <a [routerLink]="['/products']" [queryParams]="{ category: 'sports-accessories' }">
+            Men jackets
+          </a>
+        </div>
       </div>
       <div>
         <div class="list-heading">Subscribe</div>

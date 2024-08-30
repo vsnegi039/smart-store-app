@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AuthService } from './auth.service';
 import { HttpClient } from '@angular/common/http';
 import { ResponseAPI } from '../models/data-models';
-import { environment } from '../../environment';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -23,7 +23,7 @@ export class UserService {
         .post<ResponseAPI>(`${environment.API_URL}/cart/session/add`, {
           productCount,
           productId,
-          sysId: tokens.sysId
+          sysId: tokens.sysId,
         })
         .toPromise();
 

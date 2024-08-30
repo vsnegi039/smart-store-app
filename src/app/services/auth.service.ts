@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ResponseAPI } from '../models/data-models';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../environment';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -9,8 +9,8 @@ import { environment } from '../../environment';
 export class AuthService {
   constructor(private httpClient: HttpClient) {}
 
-  setLocalToken(token:any) {
-    if (environment.production) {
+  setLocalToken(token: any) {
+    if (environment.production && false) {
       // this.cookieService.set(
       //   TOKEN_VAR,
       //   JSON.stringify(this.loggedInUser.token),
@@ -23,7 +23,7 @@ export class AuthService {
 
   getLocalToken() {
     let token = null;
-    if (environment.production) {
+    if (environment.production && false) {
       // token = this.cookieService.get(TOKEN_VAR);
     } else {
       token = localStorage.getItem(environment.TOKEN_VAR);

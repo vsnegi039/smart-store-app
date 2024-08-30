@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AuthService } from './auth.service';
 import { HttpClient } from '@angular/common/http';
 import { ResponseAPI } from '../models/data-models';
-import { environment } from '../../environment';
+import { environment } from '../../environments/environment';
 import { Subject } from 'rxjs';
 
 @Injectable({
@@ -47,11 +47,15 @@ export class CartService {
     }
   }
 
-  async removeProduct(productId:string): Promise<ResponseAPI | null> {
+  async removeProduct(productId: string): Promise<ResponseAPI | null> {
     try {
       let tokens = this.authService.getLocalToken();
       const resp = await this.httpClient
-        .delete<ResponseAPI>(`${environment.API_URL}/cart?userId=${tokens.authToken?tokens.authToken:""}&productId=${productId}`)
+        .delete<ResponseAPI>(
+          `${environment.API_URL}/cart?userId=${
+            tokens.authToken ? tokens.authToken : ''
+          }&productId=${productId}`
+        )
         .toPromise();
 
       return resp?.status ? resp : null;

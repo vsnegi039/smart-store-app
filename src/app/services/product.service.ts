@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ResponseAPI } from '../models/data-models';
-import { environment } from '../../environment';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -54,7 +54,7 @@ export class ProductService {
     }
   }
 
-  async getProductById(id:string): Promise<ResponseAPI | null> {
+  async getProductById(id: string): Promise<ResponseAPI | null> {
     try {
       const resp = await this.httpClient
         .get<ResponseAPI>(`${environment.API_URL}/product/${id}`)

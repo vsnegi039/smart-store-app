@@ -23,9 +23,11 @@ import {
   faUser,
   faArrowLeft,
   faArrowRight,
+  faSearch,
 } from '@fortawesome/free-solid-svg-icons';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
-
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptorService } from './guards/interceptors/auth-interceptors';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,13 @@ import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {
@@ -58,7 +66,8 @@ export class AppModule {
       faShoppingCart,
       faUser,
       faArrowLeft,
-      faArrowRight
+      faArrowRight,
+      faSearch
     );
   }
 }

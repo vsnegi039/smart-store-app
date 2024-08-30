@@ -1,3 +1,5 @@
+@import "../../../css-config/mixins.scss";
+
 .navbar {
     background-color: rgba(0,0,0,0.1);
 }
@@ -16,6 +18,9 @@
 .navbar-nav {
     gap: 15px;
     font-weight: 500;
+    @include sm{
+        flex-direction: row !important;
+    }
 }
 
 .search-form {

@@ -1,16 +1,44 @@
+@import "../../../css-config/mixins.scss";
+
+:host {
+    width: 31% !important;
+
+    @include lg {
+        width: 40% !important;
+    }
+}
+
 .card {
-    width: 248px !important;
     border-radius: 0 !important;
     border: none;
     background-color: transparent;
     cursor: pointer;
+
+    @include sm {
+        width: 40vw;
+    }
 }
 
 .card img {
     height: 248px;
     width: 248px;
+    max-width: 100%;
     border-radius: 0 !important;
+
+    @include xl {
+        max-height: 200px;
+    }
+
+    @include lg {
+        max-width: 100%;
+    }
+
+    @include sm {
+        height: 40vw;
+        width: 40vw;
+    }
 }
+
 .card-body {
     color: var(--color2);
 }
@@ -24,6 +52,6 @@
     font-size: 12pt;
 }
 
-img{
-    background-color: rgba(0,0,0,0.08);
+img {
+    background-color: rgba(0, 0, 0, 0.08);
 }

@@ -36,7 +36,7 @@ export class CartService {
         .get<ResponseAPI>(
           `${environment.API_URL}/cart?userId=${
             tokens.authToken ? tokens.authToken : ''
-          }&sysId=${tokens.sysId ? tokens.sysId : ''}`
+          }`
         )
         .toPromise();
 
@@ -51,7 +51,7 @@ export class CartService {
     try {
       let tokens = this.authService.getLocalToken();
       const resp = await this.httpClient
-        .delete<ResponseAPI>(`${environment.API_URL}/cart?userId=${tokens.authToken?tokens.authToken:""}&sysId=${tokens.sysId?tokens.sysId:""}&productId=${productId}`)
+        .delete<ResponseAPI>(`${environment.API_URL}/cart?userId=${tokens.authToken?tokens.authToken:""}&productId=${productId}`)
         .toPromise();
 
       return resp?.status ? resp : null;

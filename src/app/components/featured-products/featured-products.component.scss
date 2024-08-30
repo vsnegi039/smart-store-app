@@ -1,9 +1,11 @@
+@import "../../../css-config/mixins.scss";
+
 .featured-container {
     background-color: #fff;
 }
 
 .content {
-    padding: 100px 100px;
+    padding: 10%;
     background-color: #f5f7f9;
 }
 
@@ -16,6 +18,15 @@
 h2 {
     font-size: 30pt;
     font-weight: 600;
+    @include sm{
+        font-size: 20pt;
+    }
+}
+
+h4 {
+    @include sm {
+        font-size: 14pt;
+    }
 }
 
 .card-body {
@@ -44,7 +55,7 @@ h2 {
 }
 
 .special-edition {
-    height: 70vh;
+    min-height: 70vh;
     padding: 8% 10%;
     background:
         url('../../../../public/assets/brand/banner-03.jpg');
@@ -52,6 +63,11 @@ h2 {
     background-position: center center;
     background-attachment: fixed;
     z-index: -1;
+    @include sm{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 
 .special-edition::before {
@@ -77,6 +93,9 @@ h2 {
 
 .edition-content p {
     width: 50%;
+    @include sm{
+        width: 100%;
+    }
 }
 
 .edition-content button {
@@ -87,6 +106,7 @@ h2 {
     border-radius: 0;
     border: none;
     font-weight: 600;
+    min-width: 100px;
 }
 
 .edition-content button:hover {
@@ -99,16 +119,22 @@ h2 {
     font-weight: 700;
 }
 
-.features{
+.features {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
     padding: 10% 5%;
     padding-bottom: 0;
+    span{
+        text-align: center;
+    }
+    @include sm {
+        flex-direction: column !important;
+    }
 }
 
-.features img{
+.features img {
     height: 52px;
     width: 52px;
 }

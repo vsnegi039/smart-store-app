@@ -1,3 +1,5 @@
+@import "../../../css-config/mixins.scss";
+
 .product-page {
     width: 100%;
     background-color: #f5f7f9;
@@ -8,21 +10,40 @@
 
 .image-container {
     height: 700px;
+
+    @include sm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    @include lg{
+        height: fit-content;
+    }
 }
 
 .image-container .img {
     padding: 10%;
     height: 75%;
-    max-width: 525px;
+    max-width: 40vw;
     background-color: rgba(0, 0, 0, 0.08);
+    min-height: 525px;
     cursor: pointer;
+
+    @include md {
+        height: 60%;
+    }
+
+    @include sm{
+        min-height: auto;
+        max-width: 65vw;
+    }
 }
 
 .image-container .img img {
     transition: transform .2s;
 }
 
-.image-container .img:hover img{
+.image-container .img:hover img {
     transform: scale(1.07);
 }
 
@@ -65,11 +86,13 @@
 
 .product-images {
     max-width: 100%;
-    width: 525px;
+    width: 40vw;
     overflow: hidden;
     position: relative;
     scrollbar-width: none;
-    // padding: 2%;
+    @include lg{
+        display: none !important;
+    }
 }
 
 .carousel-control {
@@ -77,6 +100,9 @@
     top: 86%;
     font-size: 18pt;
     cursor: pointer;
+    @include lg{
+        display: none;
+    }
 }
 
 .right-arrow {
@@ -95,4 +121,32 @@
 
 .product-images img.selected {
     opacity: 0.5;
+}
+
+.container {
+    @include lg {
+        margin: 0;
+        width: 100%;
+    }
+}
+
+.content {
+    .product-info{
+        @include sm{
+            width: 100% !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 10%;
+        }
+    }
+    @include sm {
+        flex-direction: column;
+    }
+}
+
+.center{
+    @include sm{
+        text-align: center;
+    }
 }

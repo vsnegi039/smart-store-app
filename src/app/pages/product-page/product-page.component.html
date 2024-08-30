@@ -1,5 +1,5 @@
 <div class="product-page" *ngIf="product">
-  <div class="container d-flex justify-content-around">
+  <div class="content d-flex justify-content-around">
     <div class="position-relative image-container">
       <div class="img d-flex">
         <img class="card-img-top" [src]="selectedImage" alt="Card image cap" />
@@ -35,16 +35,16 @@
         <fa-icon [icon]="['fas', 'chevron-left']"></fa-icon>
       </span>
     </div>
-    <div class="product-info w-50 p-2 d-flex flex-column gap-3">
+    <div class="product-info w-50 p-3 d-flex flex-column gap-3">
       <div class="title">
-        <h2>{{ product.title }}</h2>
+        <h2 class="center">{{ product.title }}</h2>
       </div>
       <div class="price d-flex align-items-center">
         <h4>${{ product.price }}</h4>
         + Free Shipping
       </div>
       <div class="desc">
-        <p>{{ product.description }}</p>
+        <p class="center">{{ product.description }}</p>
       </div>
       <div class="pagination d-flex gap-3">
         <button class="btn selected" (click)="decrement()">-</button>
@@ -65,7 +65,7 @@
         <h4 class="mt-2 pl-3">Ratings & Reviews</h4>
       </div>
       <ng-container *ngFor="let review of product.reviews">
-        <div>{{ review.rating }}★ {{ review.comment }}</div>
+        <div class="w-100">{{ review.rating }}★ {{ review.comment }}</div>
       </ng-container>
     </div>
   </div>

@@ -1,36 +1,66 @@
-footer > div{
+@import "../../../css-config/mixins.scss";
+
+footer>div {
     border-top: 1px solid var(--color6);
     background-color: #fff;
 }
 
-.title-container{
-    height: 90px;
+.title-container {
+    padding: 2%;
+    min-height: 90px;
+    @include sm{
+        padding: 5%;
+    }
 }
 
-.details-container{
-    height: 320px;
+.details-container {
+    min-height: 320px;
+    padding-bottom: 15px;
+
+    .details {
+
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @include lg {
+            width: 95% !important;
+        }
+
+        @media only screen and (max-width: 890px) {
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
 }
 
-.list-heading{
+.list-heading {
     font-size: 1.4rem;
     font-weight: 400;
     padding-bottom: 15px;
+
+    @media only screen and (max-width: 890px) {
+        padding-top: 15px;
+        padding-bottom: 0;
+    }
 }
 
-.list-item{
+.list-item {
     margin-top: 5px;
 }
 
-.list-item a{
+.list-item a {
     text-decoration: none;
     color: var(--color8);
 }
 
-.list-item a:hover{
+.list-item a:hover {
     color: var(--color4);
 }
 
-.subscription-input{
+.subscription-input {
     border-radius: 0;
     border-color: var(--color6);
     margin-top: 15px;
@@ -38,7 +68,7 @@ footer > div{
     width: 230px;
 }
 
-.subscription-button{
+.subscription-button {
     background-color: var(--color5);
     border-radius: 0;
     color: var(--color7);
@@ -47,20 +77,30 @@ footer > div{
     height: 45px;
 }
 
-.wrights-section{
+.wrights-section {
     height: 100px;
+    width: 100%;
+
+    :first-child>div.w-75 {
+        @include sm {
+            flex-direction: column;
+            gap: 15px;
+            width: 100% !important;
+        }
+    }
 }
 
-.icons{
+.icons {
     display: flex;
     gap: 30px;
+    justify-content: center;
 }
 
-.icons fa-icon{
+.icons fa-icon {
     height: 15px;
     cursor: pointer;
 }
 
-.icons fa-icon:hover{
+.icons fa-icon:hover {
     color: var(--color4);
 }

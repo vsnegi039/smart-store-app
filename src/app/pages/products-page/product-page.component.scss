@@ -1,14 +1,22 @@
+@import "../../../css-config/mixins.scss";
+
 .product-page {
     width: 100%;
     background-color: #f5f7f9;
     padding: 0;
     margin: 0;
     padding: 5%;
+    @include sm{
+        padding: 0;
+    }
 }
 
 .filter-section {
     width: 30%;
     padding: 0 2%;
+    @include sm{
+        display: none;
+    }
 }
 
 .no-outline {
@@ -37,10 +45,17 @@
     width: 100%;
     padding: 5%;
     margin-left: 20px;
+    @include sm{
+        margin-left: 0;
+    }
 }
 
 .product-section div {
     padding: 0 5%;
+
+    @include lg {
+        padding: 0;
+    }
 }
 
 .product-section p {
@@ -50,13 +65,16 @@
 .product-container {
     gap: 20px;
     margin-top: 50px;
+    @include lg{
+        justify-content: space-around;
+    }
 }
 
-.pagination{
+.pagination {
     gap: 5px;
 }
 
-.pagination .btn{
+.pagination .btn {
     height: 40px;
     width: 40px;
     padding: 0;
@@ -66,12 +84,13 @@
     border: 1px solid black;
 }
 
-.pagination .btn:hover, .pagination .selected {
+.pagination .btn:hover,
+.pagination .selected {
     background-color: #000;
     color: #fff;
 }
 
-.category-filter .item{
+.category-filter .item {
     cursor: pointer;
 }
 
@@ -79,23 +98,39 @@
     color: blue;
 }
 
-.best-sellers .img{
+.best-sellers img {
     height: 80px;
-}
-
-.best-sellers img{
-    height: 100%;
     width: 80px;
+
+    @include lg{
+        height: 65px;
+        width: 30%;
+    }
 }
 
-.best-item{
+.best-item {
     cursor: pointer;
+    @include md{
+        gap: 5px !important;
+    }
+    @include lg{
+        padding: 0;
+    }
 }
 
-.page-navigation{
+.page-navigation {
     color: var(--color6);
 }
 
-.cursor-pointer{
+.cursor-pointer {
     cursor: pointer;
+}
+
+.product-info{
+    div{
+        font-size: 0.9rem;
+        @include lg{
+            font-size: 9pt;
+        }
+    }
 }

@@ -1,5 +1,5 @@
 <div class="product-page">
-  <div class="container d-flex">
+  <div class="d-flex">
     <div class="filter-section">
       <div class="search-menu">
         <form (ngSubmit)="updateSearch()" class="d-flex">
@@ -32,9 +32,9 @@
         <h4>Our Best Sellers</h4>
         <ng-container *ngFor="let product of bestProducts">
           <div class="best-item d-flex gap-3" [routerLink]="['/product/',product._id]">
-            <div class="img">
-              <img [src]="product.images[0]" alt="" />
-            </div>
+            <img [src]="product.images[0]" alt="" />
+            <!-- <div class="img">
+            </div> -->
             <div class="product-info d-flex flex-column justify-content-center">
               <div>{{ product.title }}</div>
               <div>${{ product.price }}</div>

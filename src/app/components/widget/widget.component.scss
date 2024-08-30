@@ -1,24 +1,43 @@
+@import '../../../css-config/mixins.scss';
+
 .widget-container {
     background-color: #fff;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2% 0;
 }
 
 .card-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    gap: 1.5%;
+    min-height: 500px;
+    gap: 20px;
+    width: 100%;
+    padding: 0% 5%;
 }
 
 .card {
-    height: 70%;
+    min-height: 500px;
     width: 25%;
     background: url('../../../../public/assets/brand/women-fashion-free-img.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right top;
+    min-width: 20rem;
+    @include xl{
+        min-width: 15rem;
+    }
+    @media only screen and (max-width: 850px) {
+        flex-direction: column;
+        min-width: 500px;
+    }
+    @include sm{
+        min-width: 80%;
+    }
 }
 
 .card::before {
@@ -53,7 +72,7 @@ button:hover {
     background-color: #000000;
 }
 
-.card-2{
+.card-2 {
     background: url('../../../../public/assets/brand/men-fashion-free-img.jpg');
     background-position: center left;
     background-size: cover;

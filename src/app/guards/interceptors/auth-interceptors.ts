@@ -29,7 +29,7 @@ export class AuthInterceptorService implements HttpInterceptor {
       });
     }
 
-    if (req.method === 'GET') {
+    if (req.method === 'GET' || req.method === 'DELETE') {
       const params = modifiedReq.params.set('sysId', sysId);
       modifiedReq = modifiedReq.clone({ params });
     } else if (req.method === 'POST' || req.method === 'PUT') {

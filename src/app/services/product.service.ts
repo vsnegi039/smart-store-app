@@ -17,7 +17,7 @@ export class ProductService {
 
       return resp?.status ? resp : null;
     } catch (err) {
-      console.error((err as any).message);
+      console.log((err as any).message);
       return null;
     }
   }
@@ -36,7 +36,7 @@ export class ProductService {
 
       return resp?.status ? resp : null;
     } catch (err) {
-      console.error((err as any).message);
+      console.log((err as any).message);
       return null;
     }
   }
@@ -49,7 +49,7 @@ export class ProductService {
 
       return resp?.status ? resp : null;
     } catch (err) {
-      console.error((err as any).message);
+      console.log((err as any).message);
       return null;
     }
   }
@@ -62,7 +62,7 @@ export class ProductService {
 
       return resp?.status ? resp : null;
     } catch (err) {
-      console.error((err as any).message);
+      console.log((err as any).message);
       return null;
     }
   }

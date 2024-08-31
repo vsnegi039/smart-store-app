@@ -38,6 +38,8 @@ export class CartComponent implements OnInit, AfterViewInit, OnDestroy {
   async getData() {
     let resp: ResponseAPI | null = await this.cartService.getCartProducts();
     if (resp?.status) {
+      console.log(resp);
+
       this.cart = resp.data;
       this.cartService.products = resp.data;
       this.totalPrice = 0;
@@ -45,6 +47,7 @@ export class CartComponent implements OnInit, AfterViewInit, OnDestroy {
         this.totalPrice += product.count * product.productId.price;
         this.totalPrice = parseFloat(this.totalPrice.toFixed(2));
       });
+      console.log(this.cart);
     }
   }
 
@@ -62,10 +65,15 @@ export class CartComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   async removeProduct(productId: string) {
-    console.log(`Remvoe: ${productId}`);
     let resp: ResponseAPI | null = await this.cartService.removeProduct(
       productId
     );
     this.getData();
+  }
+
+  checkOut() {
+    if (!this.cart.length) {
+      
+    }
   }
 }

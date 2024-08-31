@@ -30,6 +30,7 @@ export class CartService {
 
   async getCartProducts(): Promise<ResponseAPI | null> {
     try {
+      console.log('here1');
       let tokens = this.authService.getLocalToken();
       const resp = await this.httpClient
         .get<ResponseAPI>(
@@ -41,7 +42,7 @@ export class CartService {
 
       return resp?.status ? resp : null;
     } catch (err) {
-      console.error((err as any).message);
+      console.log((err as any).message);
       return null;
     }
   }
@@ -59,7 +60,7 @@ export class CartService {
 
       return resp?.status ? resp : null;
     } catch (err) {
-      console.error((err as any).message);
+      console.log((err as any).message);
       return null;
     }
   }

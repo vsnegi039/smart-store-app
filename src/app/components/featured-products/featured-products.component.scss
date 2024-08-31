@@ -2,6 +2,10 @@
 
 .featured-container {
     background-color: #fff;
+
+    app-product {
+        max-width: 230px;
+    }
 }
 
 .content {
@@ -18,7 +22,8 @@
 h2 {
     font-size: 30pt;
     font-weight: 600;
-    @include sm{
+
+    @include sm {
         font-size: 20pt;
     }
 }
@@ -52,6 +57,7 @@ h4 {
 
 .product-container {
     gap: 20px;
+    justify-content: space-around;
 }
 
 .special-edition {
@@ -63,7 +69,8 @@ h4 {
     background-position: center center;
     background-attachment: fixed;
     z-index: -1;
-    @include sm{
+
+    @include sm {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -93,7 +100,8 @@ h4 {
 
 .edition-content p {
     width: 50%;
-    @include sm{
+
+    @include sm {
         width: 100%;
     }
 }
@@ -126,9 +134,11 @@ h4 {
     gap: 20px;
     padding: 10% 5%;
     padding-bottom: 0;
-    span{
+
+    span {
         text-align: center;
     }
+
     @include sm {
         flex-direction: column !important;
     }

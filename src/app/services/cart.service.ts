@@ -30,7 +30,6 @@ export class CartService {
 
   async getCartProducts(): Promise<ResponseAPI | null> {
     try {
-      console.log('here1');
       let tokens = this.authService.getLocalToken();
       const resp = await this.httpClient
         .get<ResponseAPI>(

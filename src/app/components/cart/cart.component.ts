@@ -38,7 +38,6 @@ export class CartComponent implements OnInit, AfterViewInit, OnDestroy {
   async getData() {
     let resp: ResponseAPI | null = await this.cartService.getCartProducts();
     if (resp?.status) {
-      console.log(resp);
 
       this.cart = resp.data;
       this.cartService.products = resp.data;
@@ -47,7 +46,6 @@ export class CartComponent implements OnInit, AfterViewInit, OnDestroy {
         this.totalPrice += product.count * product.productId.price;
         this.totalPrice = parseFloat(this.totalPrice.toFixed(2));
       });
-      console.log(this.cart);
     }
   }
 

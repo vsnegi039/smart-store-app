@@ -31,11 +31,10 @@ export class CartService {
   async getCartProducts(): Promise<ResponseAPI | null> {
     try {
       let tokens = this.authService.getLocalToken();
-      console.log(tokens.authToken);
       const resp = await this.httpClient
         .get<ResponseAPI>(
           `${environment.API_URL}/cart?userId=${
-            tokens.authToken ? tokens.authToken : ''
+            tokens && tokens.authToken ? tokens.authToken : ''
           }`
         )
         .toPromise();

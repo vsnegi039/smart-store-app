@@ -23,9 +23,11 @@ export class AuthInterceptorService implements HttpInterceptor {
 
     let modifiedReq = req;
 
-    modifiedReq = modifiedReq.clone({
-      headers: req.headers.set('Authorization', `Bearer ${tokens.authToken}`),
-    });
+    if (tokens) {
+      modifiedReq = modifiedReq.clone({
+        headers: req.headers.set('Authorization', `Bearer ${tokens.authToken}`),
+      });
+    }
 
     if (req.method === 'GET') {
       const params = modifiedReq.params.set('sysId', sysId);

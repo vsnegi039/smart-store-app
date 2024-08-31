@@ -23,7 +23,7 @@ export class UserService {
         .post<ResponseAPI>(`${environment.API_URL}/cart/session/add`, {
           productCount,
           productId,
-          sysId: tokens.sysId,
+          sysId: tokens?.sysId,
         })
         .toPromise();
 

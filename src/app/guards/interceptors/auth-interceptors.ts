@@ -19,7 +19,7 @@ export class AuthInterceptorService implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     let tokens = this.authService.getLocalToken();
-    let sysId = tokens.sysId;
+    let sysId = tokens?.sysId;
 
     let modifiedReq = req;
 
@@ -35,16 +35,16 @@ export class AuthInterceptorService implements HttpInterceptor {
       modifiedReq = modifiedReq.clone({ body });
     }
 
-    console.log('Modified Request:', modifiedReq);
+    // console.log('Modified Request:', modifiedReq);
 
     return next.handle(modifiedReq).pipe(
       tap((event: HttpEvent<any>) => {
         if (event instanceof HttpResponse) {
-          console.log('Response received:', event);
+          // console.log('Response received:', event);
         }
       }),
       finalize(() => {
-        console.log('Request completed');
+        // console.log('Request completed');
       })
     );
   }
